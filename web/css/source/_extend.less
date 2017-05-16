@@ -1,0 +1,209 @@
+// @import '_buttons_extend.less'; 
+// @import '_navigation_extend.less';
+
+////hamburger nav
+.hamburger {
+  padding: 11px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  position: absolute;
+    top: 0;
+  overflow: visible; 
+}
+  .hamburger:hover {
+    opacity: 0.7; 
+}
+
+.hamburger-box {
+  width: 25px;
+  height: 2px;
+  display: inline-block;
+  position: relative; 
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px; 
+}
+  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    width: 25px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease; 
+}
+  .hamburger-inner::before, .hamburger-inner::after {
+    content: "";
+    display: block; 
+}
+  .hamburger-inner::before {
+    top: -8px; 
+}
+  .hamburger-inner::after {
+    bottom: -8px; 
+}
+
+///spin effect
+.hamburger--spin .hamburger-inner {
+  transition-duration: 0.22s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); 
+}
+  .hamburger--spin .hamburger-inner::before {
+    transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in; 
+}
+  .hamburger--spin .hamburger-inner::after {
+    transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19); 
+}
+
+.hamburger--spin.is-active .hamburger-inner {
+  transform: rotate(225deg);
+  transition-delay: 0.12s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); 
+}
+  .hamburger--spin.is-active .hamburger-inner::before {
+    top: 0;
+    opacity: 0;
+    transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out; 
+}
+  .hamburger--spin.is-active .hamburger-inner::after {
+    bottom: 0;
+    transform: rotate(-90deg);
+    transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); 
+}
+
+
+
+/// fonts overide
+.navigation a, .navigation span{
+	color: white;
+    font-family: 'ff-good-headline-web-pro-con',helvetica,arial;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    box-sizing: border-box;
+}
+
+body {
+      overflow-x: hidden;
+}
+.page-footer,.page-main {
+    margin-left: 48px;
+}
+.page-header{
+	border:none !important;
+    margin: 0 !important;
+    padding:0 !important;
+}
+.nav_wrapper{
+	position: absolute;
+	top: 0;
+    right: -48px;
+    background-color: #ED1C29;
+    width: 48px;
+    padding-top: 57px;
+    height: 100%;
+    z-index: 99;
+    >img{
+    	    width: 44px;
+		    display: table;
+		    margin: 0 auto;
+    }
+    svg{
+    	float: none;
+		height: 158px;
+		width: 48px;
+    }
+}
+.logo{
+	float: none;
+}
+.page-wrapper{
+	  -webkit-filter: blur(0px);
+  	filter: blur(0px);
+}
+.navigation .level0.active > a:not(.ui-state-active), .navigation .level0.has-active > a:not(.ui-state-active){
+	border: none;
+}
+.navigation .level0.active > a:not(.ui-state-active) span:not(.ui-menu-icon), .navigation .level0.has-active > a:not(.ui-state-active) span:not(.ui-menu-icon){
+	margin-left: 0;
+}
+
+.nav-sections{
+	 overflow: visible;
+	 z-index: 999;
+}
+.nav_element{
+	font-size: 1.6rem;
+	span{
+		text-transform: uppercase;
+		font-family: "ff-good-headline-web-pro-con",helvetica,arial;
+		letter-spacing: 0.1em;
+		font-weight: 700;
+	}
+}
+.level0.submenu.ui-menu.ui-widget.ui-widget-content.ui-corner-all{
+	padding-left: 35px;
+}
+
+.nav-toggle{
+	z-index: 100;
+	&:before{
+		color: #fff;
+		
+	}
+}
+
+.nav-open .nav-toggle:after{
+	width: calc(~'80% - 85px');
+}
+.navigation a, .navigation a:hover{
+	color: #fff;
+}
+.navigation .level0,.navigation li.level0:last-child{
+	border: none;
+}
+
+
+.page-footer{
+
+		background-color: #333;
+		position: relative;
+		bottom: 0;
+		width: 100%;
+	.footer{
+		border: none;
+		.homeVCenterContainer{
+			width: 100%;
+		    height: 100%;
+		    display: table;
+		    margin: 0 auto;
+		    img{
+		    	max-height: 140px;
+	    		max-width: 181px;
+		    }
+		}
+		h3,h5{
+	    	color: #CCCCCC;
+		}
+		ul{
+			li{
+				padding-bottom: 5px;
+			}
+		}
+		a{
+			    color: #F4F4F4;
+		}
+	}
+}
